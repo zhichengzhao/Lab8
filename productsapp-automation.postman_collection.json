@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "89359c6a-e7c6-464d-9d5d-7181543e7a1d",
+		"name": "productsapp-automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"\r",
+							"pm.test(\"1 response to have an Id\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[0].Id\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Name\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[0].Name\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Category\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[0].Category\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Price\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[0].Price\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"2 response to have an Id\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[1].Id\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"2 response to have an Name\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[1].Name\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"2 response to have an Category\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[1].Category\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"2 response to have an Price\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[1].Price\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3 response to have an Id\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[2].Id\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3 response to have an Name\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[2].Name\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3 response to have an Category\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[2].Category\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3 response to have an Price\", function(){\r",
+							" pm.response.to.have.jsonBody(\"[2].Price\")\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"value of [0].Id to be 1\", function(){\r",
+							" pm.expect(1).to.equal(jsonData[0].Id)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"value of [0].Name to be Tomato Soup\", function(){\r",
+							" pm.expect(\"Tomato Soup\").to.equal(jsonData[0].Name)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"value of [0].Category to be Goceries\", function(){\r",
+							" pm.expect(\"Groceries\").to.equal(jsonData[0].Category)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"value of [0].Price to be 1.0\", function(){\r",
+							" pm.expect(1.0).to.equal(jsonData[0].Price)\r",
+							"});\r",
+							"\r",
+							"\r",
+							"// pm.test(\"value of [0].Id to be 1\", function(){\r",
+							"//  pm.expect(2).to.equal(jsonData[1].Id)\r",
+							"// });\r",
+							"\r",
+							"// pm.test(\"value of [0].Id to be 1\", function(){\r",
+							"//  pm.expect(3).to.equal(jsonData[2].Id)\r",
+							"// });\r",
+							"\r",
+							"// pm.test(\"first test\", function(){\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"pm.test(\"status 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response time less than 1000MS\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57183/api/Products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57183",
+					"path": [
+						"api",
+						"Products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"\r",
+							"pm.test(\"1 response to have an Id\", function(){\r",
+							" pm.response.to.have.jsonBody(\"Id\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Name\", function(){\r",
+							" pm.response.to.have.jsonBody(\"Name\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Category\", function(){\r",
+							" pm.response.to.have.jsonBody(\"Category\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"1 response to have an Price\", function(){\r",
+							" pm.response.to.have.jsonBody(\"Price\")\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Id to be 1\", function(){\r",
+							" pm.expect(1).to.equal(jsonData.Id)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Name to be Tomato Soup\", function(){\r",
+							" pm.expect(\"Tomato Soup\").to.equal(jsonData.Name)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Category to be Goceries\", function(){\r",
+							" pm.expect(\"Groceries\").to.equal(jsonData.Category)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Price to be 1.0\", function(){\r",
+							" pm.expect(1.0).to.equal(jsonData.Price)\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"// pm.test(\"first test\", function(){\r",
+							"//     pm.response.to.have.status(200);\r",
+							"// });\r",
+							"\r",
+							"pm.test(\"status 200\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response time less than 1000MS\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:57183/api/products?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "57183",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
